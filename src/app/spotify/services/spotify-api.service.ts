@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -18,10 +19,12 @@ export class SpotifyApiService {
     };
     const body = new URLSearchParams();
     body.set('grant_type', 'client_credentials');
-    body.set('client_id', 'f0151316ba28418b80f25633562de27e');
-    body.set('client_secret', '93a1c081b49a42bbb670ffd3a9433efc');
+    body.set('client_id', environment.clientId);
+    body.set('client_secret', environment.clientSecret);
 
-    return this.http.post(environment.authSpotifyApi, body.toString(), options);
+    return this.http
+      .post(environment.authSpotifyApi, body.toString(), options)
+      .pipe(delay(1100));
   }
 
   getQuery(query: string) {
