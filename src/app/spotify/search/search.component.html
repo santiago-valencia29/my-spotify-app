@@ -5,15 +5,17 @@
   </mat-form-field>
 </div>
 <div fxLayout="row wrap" fxLayoutAlign="center">
-  <mat-card class="card-release" fxFlex="20" fxFlex.sm="40" fxFlex.xs="40">
-    <img class="img-pointer" mat-card-image alt="Photo of a Shiba Inu" />
+  <mat-card
+    *ngFor="let artist of artists"
+    class="card-release"
+    fxFlex="20"
+    fxFlex.sm="40"
+    fxFlex.xs="40"
+  >
+    <img class="img-pointer" mat-card-image [src]="artist.images[0].url" />
     <mat-card-content class="text-white">
       <div fxLayout="column" fxLayoutAlign="center center">
-        <span class="title"></span>
-        <hr />
-        <mat-chip-list aria-label="Fish selection">
-          <mat-chip>hf</mat-chip>
-        </mat-chip-list>
+        <span class="title">{{ artist.name }}</span>
       </div>
     </mat-card-content>
   </mat-card>

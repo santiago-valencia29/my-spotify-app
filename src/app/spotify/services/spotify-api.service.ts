@@ -48,6 +48,14 @@ export class SpotifyApiService {
     );
   }
 
+  getArtist(term: string) {
+    return this.getQuery(`search?q=${term}&type=artist&limit=20`).pipe(
+      map((data) => {
+        return data['artists'].items;
+      })
+    );
+  }
+
   loadDataReleases(data?: any) {
     if (data == null) {
       return this.loadReleases.getValue();
