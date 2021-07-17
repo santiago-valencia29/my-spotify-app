@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SpotifyComponent } from './spotify/spotify.component';
+import { HomeComponent } from './spotify/home/home.component';
 
 const routes: Routes = [
-  { path: 'entry-token', component: SpotifyComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'entry-token' },
+  { path: 'home', component: HomeComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
 @NgModule({

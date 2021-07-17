@@ -1,0 +1,28 @@
+<div fxLayout="row wrap" fxLayoutAlign="center">
+  <mat-card
+    *ngFor="let song of newRealeasesSongs"
+    class="card-release"
+    fxFlex="20"
+    fxFlex.sm="40"
+    fxFlex.xs="40"
+  >
+    <img
+      class="img-pointer"
+      mat-card-image
+      [src]="song.images[0].url"
+      alt="Photo of a Shiba Inu"
+    />
+    <mat-card-content class="text-white">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <span class="title">{{ song.name }}</span>
+        <hr />
+        <mat-chip-list
+          *ngFor="let artist of song.artists"
+          aria-label="Fish selection"
+        >
+          <mat-chip>{{ artist.name }}</mat-chip>
+        </mat-chip-list>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

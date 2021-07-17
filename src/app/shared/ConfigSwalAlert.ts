@@ -5,12 +5,19 @@ const variables = {
 };
 
 export const SwalConfig = {
-  loadingDesign: {
+  loadingDesignToken: {
     showConfirmButton: false,
     allowOutsideClick: false,
     icon: 'info',
     background: variables.backgroundStyle,
     html: '<p style="color:#ffff">Loading valid token...</p>',
+  },
+  loadingDesign: {
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    icon: 'info',
+    background: variables.backgroundStyle,
+    html: '<p style="color:#ffff">Loading...</p>',
   },
   errorConexion: {
     background: variables.backgroundStyleError,

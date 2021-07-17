@@ -24,7 +24,7 @@ export class SidenavComponent implements OnInit {
 
   tokenAuthEntry() {
     let alert: {};
-    alert = SwalConfig.loadingDesign;
+    alert = SwalConfig.loadingDesignToken;
     Swal.fire(alert);
     Swal.showLoading();
     this._spotifyApi.getTokenAuth().subscribe(
@@ -32,7 +32,31 @@ export class SidenavComponent implements OnInit {
         if (data.access_token) {
           localStorage.setItem('tokenApiSpotify', data.access_token);
           Swal.close();
+          this.newSongs();
           this.router.navigateByUrl('/home');
+        }
+      },
+      (err) => {
+        const alertError: {} = SwalConfig.errorConexion;
+        alertError['text'] = err.error.error;
+        Swal.fire(alertError).then((result) => {
+          Swal.showLoading();
+          this.ngOnInit();
+        });
+      }
+    );
+  }
+
+  newSongs() {
+    let alert: {};
+    alert = SwalConfig.loadingDesign;
+    Swal.fire(alert);
+    Swal.showLoading();
+    this._spotifyApi.getNewReleases().subscribe(
+      (data) => {
+        if (data) {
+          this._spotifyApi.loadDataReleases(data);
+          Swal.close();
         }
       },
       (err) => {
