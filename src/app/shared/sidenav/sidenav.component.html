@@ -9,7 +9,7 @@
   >
     <div>
       <i class="fab fa-spotify fa-2x icon-spotify"> </i
-      ><span class="title"> Spotify</span>
+      ><span class="title"> My Spotify</span>
     </div>
     <hr />
     <nav>
@@ -29,7 +29,7 @@
 
         <div *ngIf="!showlogo">
           <i class="fab fa-spotify icon-spotify"> </i
-          ><span class="title"> Spotify</span>
+          ><span class="title"> My Spotify</span>
         </div>
 
         <nav *ngIf="!showlogo">
@@ -39,7 +39,7 @@
       </header>
     </mat-toolbar>
     <div>
-      <router-outlet (activate)="onActivate($event)"></router-outlet>
+      <router-outlet (activate)="onActivateScrollTop($event)"></router-outlet>
     </div>
     <!-- <app-footer></app-footer> -->
   </mat-sidenav-content>

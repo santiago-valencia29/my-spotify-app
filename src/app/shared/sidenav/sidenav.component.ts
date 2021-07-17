@@ -50,7 +50,7 @@ export class SidenavComponent implements OnInit {
     this.sidenav.close();
   }
 
-  onActivate(event) {
+  onActivateScrollTop(event) {
     document.body.scrollTop = 0;
   }
 }
