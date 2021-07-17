@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './spotify/home/home.component';
+import { SearchComponent } from './spotify/search/search.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'search', component: SearchComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

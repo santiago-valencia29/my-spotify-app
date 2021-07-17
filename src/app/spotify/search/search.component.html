@@ -1,0 +1,20 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <mat-form-field>
+    <mat-label>Search Artist</mat-label>
+    <input #term matInput type="text" (keyup)="search(term.value)" />
+  </mat-form-field>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="center">
+  <mat-card class="card-release" fxFlex="20" fxFlex.sm="40" fxFlex.xs="40">
+    <img class="img-pointer" mat-card-image alt="Photo of a Shiba Inu" />
+    <mat-card-content class="text-white">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <span class="title"></span>
+        <hr />
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip>hf</mat-chip>
+        </mat-chip-list>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

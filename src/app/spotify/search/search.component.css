@@ -1,0 +1,27 @@
+::ng-deep .mat-drawer-container {
+  color: white !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: white;
+}
+
+::ng-deep.mat-form-field-underline {
+  background-color: rgb(201, 195, 195) !important;
+}
+
+mat-label {
+  color: white;
+}
+
+::ng-deep .mat-input-element {
+  caret-color: white;
+}
+::ng-deep .mat-input-element::placeholder {
+  color: rgb(201, 195, 195);
+}
+
+mat-form-field {
+  margin-top: 10px;
+  width: 400px;
+}
