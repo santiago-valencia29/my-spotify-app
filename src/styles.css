@@ -10,3 +10,12 @@ body {
   background-color: black;
   color: white;
 }
+
+.swal2-loader {
+  border-color: #1dd05d transparent #1dd05d transparent !important;
+}
+
+.swal2-icon.swal2-info {
+  border-color: #1dd05d !important;
+  color: white !important;
+}

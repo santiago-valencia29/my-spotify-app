@@ -8,7 +8,6 @@ import { delay } from 'rxjs/operators';
 })
 export class SpotifyApiService {
   constructor(private http: HttpClient) {}
-  token;
 
   getTokenAuth() {
     let options = {
@@ -24,7 +23,7 @@ export class SpotifyApiService {
 
     return this.http
       .post(environment.authSpotifyApi, body.toString(), options)
-      .pipe(delay(1100));
+      .pipe(delay(1800));
   }
 
   getQuery(query: string) {

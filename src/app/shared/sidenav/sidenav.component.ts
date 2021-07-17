@@ -35,9 +35,9 @@ export class SidenavComponent implements OnInit {
           this.router.navigateByUrl('/home');
         }
       },
-      (error) => {
+      (err) => {
         const alertError: {} = SwalConfig.errorConexion;
-        alertError['text'] = error.message;
+        alertError['text'] = err.error.error;
         Swal.fire(alertError).then((result) => {
           Swal.showLoading();
           this.ngOnInit();
