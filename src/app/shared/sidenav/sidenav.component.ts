@@ -54,10 +54,8 @@ export class SidenavComponent implements OnInit {
     Swal.showLoading();
     this._spotifyApi.getNewReleases().subscribe(
       (data) => {
-        if (data) {
-          this._spotifyApi.loadDataReleases(data);
-          Swal.close();
-        }
+        this._spotifyApi.loadDataReleases(data);
+        Swal.close();
       },
       (err) => {
         const alertError: {} = SwalConfig.errorConexion;

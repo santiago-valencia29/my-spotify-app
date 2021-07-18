@@ -19,6 +19,12 @@ export const SwalConfig = {
     background: variables.backgroundStyle,
     html: '<p style="color:#ffff">Loading...</p>',
   },
+  notFound: {
+    showConfirmButton: true,
+    icon: 'info',
+    background: variables.backgroundStyle,
+    html: '<p style="color:#ffff">The artist does not exist</p>',
+  },
   errorConexion: {
     background: variables.backgroundStyleError,
     title: 'Connection error',
