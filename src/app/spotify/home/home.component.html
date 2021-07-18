@@ -6,7 +6,7 @@
     fxFlex.sm="40"
     fxFlex.xs="40"
   >
-    <img class="img-pointer" mat-card-image [src]="song.images[0].url" />
+    <img class="img-pointer" mat-card-image [src]="song.images | noimage" />
     <mat-card-content class="text-white">
       <div fxLayout="column" fxLayoutAlign="center center">
         <span class="title">{{ song.name }}</span>
