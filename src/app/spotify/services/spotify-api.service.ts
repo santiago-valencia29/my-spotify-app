@@ -41,7 +41,7 @@ export class SpotifyApiService {
   }
 
   getNewReleases() {
-    return this.getQuery('browse/new-releases?limit=30').pipe(
+    return this.getQuery('browse/new-releases?country=CO&limit=30').pipe(
       map((data) => {
         return data['albums'].items;
       })
