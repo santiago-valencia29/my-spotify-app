@@ -1,7 +1,6 @@
 .card-release {
   color: white;
   background: transparent;
-  cursor: pointer;
   margin: 25px 20px 20px 10px;
   -webkit-box-shadow: 4px 4px 15px -1px #1dd05d;
   box-shadow: 4px 4px 15px -1px #1dd05d;
@@ -28,4 +27,8 @@ span {
 .mat-chip.mat-standard-chip {
   background-color: #1dd05d;
   margin-bottom: 7px;
+}
+
+.pointer {
+  cursor: pointer;
 }

@@ -6,6 +6,7 @@
 </div>
 <div fxLayout="row wrap" fxLayoutAlign="center">
   <mat-card
+    (click)="showArtist(artist.id)"
     *ngFor="let artist of artists"
     class="card-release"
     fxFlex="20"

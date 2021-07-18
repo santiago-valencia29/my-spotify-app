@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SpotifyApiService } from '../services/spotify-api.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { SpotifyApiService } from '../services/spotify-api.service';
 })
 export class HomeComponent implements OnInit {
   newRealeasesSongs = [];
-  constructor(private _spotifyApi: SpotifyApiService) {}
+  constructor(private router: Router, private _spotifyApi: SpotifyApiService) {}
 
   ngOnInit() {
     this._spotifyApi.loadReleases$.subscribe((data) => {
@@ -16,5 +17,9 @@ export class HomeComponent implements OnInit {
         this.newRealeasesSongs = data;
       }
     });
+  }
+
+  showArtist(artistId: string) {
+    this.router.navigate(['/artist', artistId]);
   }
 }

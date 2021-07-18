@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SwalConfig } from 'src/app/shared/ConfigSwalAlert';
 import Swal from 'sweetalert2';
 import { SpotifyApiService } from '../services/spotify-api.service';
@@ -10,7 +11,7 @@ import { SpotifyApiService } from '../services/spotify-api.service';
 })
 export class SearchComponent implements OnInit {
   artists: any[] = [];
-  constructor(private _spotifyApi: SpotifyApiService) {}
+  constructor(private router: Router, private _spotifyApi: SpotifyApiService) {}
 
   ngOnInit() {}
 
@@ -18,8 +19,6 @@ export class SearchComponent implements OnInit {
     this._spotifyApi.getArtist(term).subscribe(
       (data) => {
         this.artists = data;
-        console.log(data);
-
         if (data.length === 0) {
           let alert: {};
           alert = SwalConfig.notFound;
@@ -38,5 +37,9 @@ export class SearchComponent implements OnInit {
         }
       }
     );
+  }
+
+  showArtist(artistId: string) {
+    this.router.navigate(['/artist', artistId]);
   }
 }
