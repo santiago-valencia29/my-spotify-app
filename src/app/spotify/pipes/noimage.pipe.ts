@@ -14,7 +14,5 @@ export class NoimagePipe implements PipeTransform {
     } else {
       return 'assets/img/noimage.png';
     }
-
-    return null;
   }
 }
