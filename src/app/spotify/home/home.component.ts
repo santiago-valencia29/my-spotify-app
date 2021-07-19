@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UnsubscribeOnDestroyAdapter } from 'src/app/shared/UnsubscribeOnDestroyAdapter';
 import { SpotifyApiService } from '../services/spotify-api.service';
 
 @Component({
@@ -7,12 +8,17 @@ import { SpotifyApiService } from '../services/spotify-api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent
+  extends UnsubscribeOnDestroyAdapter
+  implements OnInit
+{
   newRealeasesSongs = [];
-  constructor(private router: Router, private _spotifyApi: SpotifyApiService) {}
+  constructor(private router: Router, private _spotifyApi: SpotifyApiService) {
+    super();
+  }
 
   ngOnInit() {
-    this._spotifyApi.loadReleases$.subscribe((data) => {
+    this.subs.sink = this._spotifyApi.loadReleases$.subscribe((data) => {
       if (data) {
         this.newRealeasesSongs = data;
       }

@@ -1,27 +1,32 @@
-# my-spotify-app
+My Spotify App: ANGULAR 10 TECHNICAL TEST
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+built with 🛠️:
 
-## Development server
+Angular version 10, Angular Material, NgRx, sweetalert2, Spotify Web API, Responsive design(Flex Layout)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Commmits Github: https://github.com/santiago-valencia29/my-spotify-app
 
-## Code scaffolding
+Deploy Firebase Hosting: 🚀
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Entry: https://my-spotify-app-88da9.web.app/home
 
-## Build
+Install 🔧
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Clone repository and npm install.
 
-## Running unit tests
+Description: 📦
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Home
 
-## Running end-to-end tests
+list of albums releases, click on artist name to access track list
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+2. Search Artist Input
 
-## Further help
+link card to access artist's track list
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Page Artist Tracks
+
+Allows you to view the songs in a table and sort them alphabetically. click on the title header to order
+
+Author ✒️
+Santiago Valencia ❤️
