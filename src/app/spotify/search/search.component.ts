@@ -26,7 +26,6 @@ export class SearchComponent implements OnInit {
         }
       },
       (err) => {
-        console.log(err.error.error.status);
         if (err.error.error.status !== 400) {
           const alertError: {} = SwalConfig.errorConexion;
           alertError['text'] = err.error.error;

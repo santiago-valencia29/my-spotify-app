@@ -8,6 +8,7 @@ import { NoimagePipe } from './pipes/noimage.pipe';
 import { ArtistComponent } from './artist/artist.component';
 import { RouterModule } from '@angular/router';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { NgwWowModule } from 'ngx-wow';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     AngularMaterialModule,
     FlexLayoutModule,
     RouterModule,
+    NgwWowModule,
   ],
   exports: [HomeComponent, SearchComponent, ArtistComponent],
   declarations: [
