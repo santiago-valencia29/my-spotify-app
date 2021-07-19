@@ -4,11 +4,11 @@ built with 🛠️:
 
 Angular version 10, Angular Material, NgRx, sweetalert2, Spotify Web API, Responsive design(Flex Layout)
 
-Commmits Github: https://github.com/santiago-valencia29/my-spotify-app
+Commmits Github: https://github.com/santiago-valencia29/my-spotify-app/commits/master
 
 Deploy Firebase Hosting: 🚀
 
-Entry: https://my-spotify-app-88da9.web.app/home
+enter the page: https://my-spotify-app-88da9.web.app/home
 
 Install 🔧
 
