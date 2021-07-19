@@ -5,18 +5,24 @@ import { AuthData } from 'src/app/spotify/models/auth-data.model';
 import { SpotifyApiService } from 'src/app/spotify/services/spotify-api.service';
 import Swal from 'sweetalert2';
 import { SwalConfig } from '../ConfigSwalAlert';
+import { UnsubscribeOnDestroyAdapter } from '../UnsubscribeOnDestroyAdapter';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css'],
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent
+  extends UnsubscribeOnDestroyAdapter
+  implements OnInit
+{
   @ViewChild('sidenav') sidenav: MatSidenav;
 
   opened: boolean;
   showlogo: boolean;
-  constructor(private _spotifyApi: SpotifyApiService, private router: Router) {}
+  constructor(private _spotifyApi: SpotifyApiService, private router: Router) {
+    super();
+  }
 
   ngOnInit() {
     this.tokenAuthEntry();
@@ -27,7 +33,7 @@ export class SidenavComponent implements OnInit {
     alert = SwalConfig.loadingDesignToken;
     Swal.fire(alert);
     Swal.showLoading();
-    this._spotifyApi.getTokenAuth().subscribe(
+    this.subs.sink = this._spotifyApi.getTokenAuth().subscribe(
       (data: AuthData) => {
         if (data.access_token) {
           localStorage.setItem('tokenApiSpotify', data.access_token);
@@ -51,7 +57,7 @@ export class SidenavComponent implements OnInit {
     alert = SwalConfig.loadingDesign;
     Swal.fire(alert);
     Swal.showLoading();
-    this._spotifyApi.getNewReleases().subscribe(
+    this.subs.sink = this._spotifyApi.getNewReleases().subscribe(
       (data) => {
         this._spotifyApi.loadDataReleases(data);
         Swal.close();

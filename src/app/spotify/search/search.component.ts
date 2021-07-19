@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwalConfig } from 'src/app/shared/ConfigSwalAlert';
+import { UnsubscribeOnDestroyAdapter } from 'src/app/shared/UnsubscribeOnDestroyAdapter';
 import Swal from 'sweetalert2';
 import { SpotifyApiService } from '../services/spotify-api.service';
 
@@ -9,14 +10,19 @@ import { SpotifyApiService } from '../services/spotify-api.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css'],
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent
+  extends UnsubscribeOnDestroyAdapter
+  implements OnInit
+{
   artists: any[] = [];
-  constructor(private router: Router, private _spotifyApi: SpotifyApiService) {}
+  constructor(private router: Router, private _spotifyApi: SpotifyApiService) {
+    super();
+  }
 
   ngOnInit() {}
 
   search(term: string) {
-    this._spotifyApi.getArtists(term).subscribe(
+    this.subs.sink = this._spotifyApi.getArtists(term).subscribe(
       (data) => {
         this.artists = data;
         if (data.length === 0) {

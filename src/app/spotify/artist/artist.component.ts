@@ -8,13 +8,17 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Track } from '../models/track.model';
+import { UnsubscribeOnDestroyAdapter } from 'src/app/shared/UnsubscribeOnDestroyAdapter';
 
 @Component({
   selector: 'app-artist',
   templateUrl: './artist.component.html',
   styleUrls: ['./artist.component.css'],
 })
-export class ArtistComponent implements OnInit, AfterViewInit {
+export class ArtistComponent
+  extends UnsubscribeOnDestroyAdapter
+  implements OnInit, AfterViewInit
+{
   displayedColumns: string[] = [
     'position',
     'photo',
@@ -33,9 +37,10 @@ export class ArtistComponent implements OnInit, AfterViewInit {
     private router: ActivatedRoute,
     private _spotifyApi: SpotifyApiService
   ) {
+    super();
     this.loadingArtist = true;
 
-    this.router.params.subscribe((params) => {
+    this.subs.sink = this.router.params.subscribe((params) => {
       this.getArtist(params['id']);
     });
   }
@@ -51,7 +56,7 @@ export class ArtistComponent implements OnInit, AfterViewInit {
     alert = SwalConfig.loadingDesignArtist;
     Swal.fire(alert);
     Swal.showLoading();
-    this._spotifyApi.getArtist(id).subscribe(
+    this.subs.sink = this._spotifyApi.getArtist(id).subscribe(
       (artist) => {
         this.artist = artist;
         this.loadingArtist = false;
@@ -74,7 +79,7 @@ export class ArtistComponent implements OnInit, AfterViewInit {
     alert = SwalConfig.loadingDesignTracks;
     Swal.fire(alert);
     Swal.showLoading();
-    this._spotifyApi.getTopTracks(id).subscribe(
+    this.subs.sink = this._spotifyApi.getTopTracks(id).subscribe(
       (topTracks) => {
         this.topTracks = topTracks.map((data, index) => {
           return {
