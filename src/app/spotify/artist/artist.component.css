@@ -1,0 +1,26 @@
+.container-artist {
+  margin: 20px;
+  color: white;
+}
+
+img {
+  width: 100%;
+  border-radius: 50% !important;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  -ms-border-radius: 50% !important;
+  -o-border-radius: 50% !important;
+}
+
+.container-img {
+  padding-left: 10px;
+  padding-top: 25px;
+}
+
+.link {
+  color: #1dd05d;
+}
+
+.btn-back {
+  padding-top: 20px;
+}

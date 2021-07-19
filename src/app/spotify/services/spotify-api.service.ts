@@ -49,12 +49,16 @@ export class SpotifyApiService {
     );
   }
 
-  getArtist(term: string) {
+  getArtists(term: string) {
     return this.getQuery(`search?q=${term}&type=artist&limit=20`).pipe(
       map((data) => {
         return data['artists'].items;
       })
     );
+  }
+
+  getArtist(id: string) {
+    return this.getQuery(`artists/${id}`).pipe(delay(600));
   }
 
   loadDataReleases(data?: any) {

@@ -1,0 +1,23 @@
+<div
+  *ngIf="!loadingArtist"
+  class="container-artist"
+  fxLayout="row"
+  fxLayoutGap="40px"
+>
+  <div class="container-img" fxFlex="20">
+    <img class="img" [src]="artist.images | noimage" alt="" />
+  </div>
+  <div fxFlex="60">
+    <h3>{{ artist.name }}</h3>
+    <p>
+      <a class="link" [href]="artist['external_urls'].spotify" target="_blank"
+        ><i class="fas fa-link"></i>Go to artist page official Spotify</a
+      >
+    </p>
+  </div>
+  <div fxFlex class="btn-back">
+    <a class="link" routerLink="/search"
+      ><i class="fas fa-arrow-circle-left"></i>Back</a
+    >
+  </div>
+</div>

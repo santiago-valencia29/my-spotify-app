@@ -1,7 +1,3 @@
-::ng-deep .mat-drawer-container {
-  color: white !important;
-}
-
 ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
   background-color: white;
 }

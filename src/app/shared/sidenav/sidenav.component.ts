@@ -33,7 +33,6 @@ export class SidenavComponent implements OnInit {
           localStorage.setItem('tokenApiSpotify', data.access_token);
           Swal.close();
           this.newSongs();
-          this.router.navigateByUrl('/home');
         }
       },
       (err) => {
