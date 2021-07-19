@@ -1,0 +1,100 @@
+<div
+  *ngIf="!loadingArtist"
+  class="container-artist wow fadeInLeft"
+  data-wow-delay="0.3s"
+  data-wow-duration="2s"
+  fxLayout="row"
+  fxLayoutGap="40px"
+>
+  <div class="container-img" fxFlex="18">
+    <img class="img" [src]="artist.images | noimage" alt="" />
+  </div>
+  <div class="artist-info" fxFlex="60">
+    <h3>{{ artist.name }}</h3>
+    <p>
+      <a class="link" [href]="artist['external_urls'].spotify" target="_blank"
+        ><i class="fas fa-link"></i>Go to artist page official Spotify</a
+      >
+    </p>
+  </div>
+  <div fxFlex class="btn-back">
+    <a class="link" routerLink="/search"
+      ><i class="fas fa-arrow-circle-left"></i>Back</a
+    >
+  </div>
+</div>
+
+<div fxLayout="column">
+  <div fxFlex>
+    <div class="container-table">
+      <table
+        class="table-style"
+        mat-table
+        [dataSource]="dataSource"
+        matSort
+        cdkDropList
+        cdkDropListOrientation="horizontal"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <ng-container matColumnDef="position" sticky>
+          <th mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header>#</th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.position }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="photo">
+          <th mat-header-cell cdkDrag *matHeaderCellDef>PHOTO</th>
+          <td mat-cell *matCellDef="let row">
+            <img class="img-track" [src]="row.photo | noimage" />
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="album">
+          <th mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header>
+            ALBUM
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.album }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="song">
+          <th mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header>
+            SONG
+          </th>
+          <td mat-cell *matCellDef="let row">
+            {{ row.song }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="preview">
+          <th mat-header-cell cdkDrag *matHeaderCellDef mat-sort-header>
+            PREVIEW
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <iframe
+              [src]="
+                'https://open.spotify.com/embed/track/' | domseguro: row.preview
+              "
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </td>
+        </ng-container>
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns; sticky: true"
+        ></tr>
+        <tr
+          mat-row
+          class="my-row"
+          tabindex="1"
+          [class.my-row__alternate]="i % 2"
+          *matRowDef="let row; columns: displayedColumns; let i = index"
+        ></tr>
+      </table>
+    </div>
+  </div>
+</div>

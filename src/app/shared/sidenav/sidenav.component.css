@@ -1,0 +1,165 @@
+::ng-deep .mat-drawer-inner-container {
+  background-color: #262a2e;
+}
+
+.mat-sidenav-container {
+  height: 100vh;
+}
+
+.sidenav-container {
+  width: 200px;
+}
+
+::ng-deep .mat-drawer-container {
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-sidenav-container .mat-sidenav label {
+  color: white !important;
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif !important;
+}
+
+::ng-deep .mat-sidenav-container .mat-sidenav nav {
+  margin-top: 15px !important;
+}
+
+::ng-deep .mat-sidenav-container .mat-sidenav nav a {
+  display: block;
+  outline: 0px;
+  margin: 5px 0px;
+  text-decoration: none;
+  color: rgb(189, 188, 188);
+  padding: 5px 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+::ng-deep .mat-sidenav-container .mat-sidenav nav a:hover {
+  color: white !important;
+}
+
+::ng-deep .mat-sidenav-container .mat-sidenav nav a.active {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mat-toolbar {
+  background: #262a2e;
+  color: white;
+}
+
+::ng-deep .mat-sidenav-container .mat-sidenav-content .mat-toolbar {
+  height: 50px;
+  padding: 0px;
+}
+::ng-deep .mat-sidenav-container .mat-sidenav-content .mat-toolbar header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 5px;
+}
+
+::ng-deep
+  .mat-sidenav-container
+  .mat-sidenav-content
+  .mat-toolbar
+  header
+  .mat-icon {
+  display: inline;
+  cursor: pointer;
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+::ng-deep
+  .mat-sidenav-container
+  .mat-sidenav-content
+  .mat-toolbar
+  header
+  nav
+  a {
+  color: rgb(189, 188, 188);
+  padding: 5px 10px;
+  margin-left: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.mat-sidenav-container .mat-sidenav-content .mat-toolbar header nav a:hover {
+  color: #fff;
+}
+::ng-deep
+  .mat-sidenav-container
+  .mat-sidenav-content
+  .mat-toolbar
+  header
+  nav
+  a.active {
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1023px) {
+  .mat-sidenav-container .mat-sidenav-content .mat-toolbar {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .mat-sidenav-container .mat-sidenav-content .mat-toolbar header .mat-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .mat-sidenav-container .mat-sidenav-content .mat-toolbar header nav {
+    display: none;
+  }
+
+  .mat-sidenav-container .mat-sidenav-content section {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mat-sidenav-container .mat-sidenav-content .mat-toolbar header {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .mat-sidenav-container .mat-sidenav-content section {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  mat-icon {
+    display: none !important;
+  }
+}
+
+.icon-close {
+  color: white;
+  cursor: pointer;
+}
+
+.icon-spotify {
+  margin-left: 10px;
+  margin-top: 4px;
+  color: #1dd05d;
+}
+
+.title {
+  color: white;
+  font-size: 20px;
+}
+
+mat-icon {
+  margin-right: 20px;
+}

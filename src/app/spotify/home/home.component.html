@@ -1,0 +1,29 @@
+<div
+  class="wow fadeInDown"
+  fxLayout="row wrap"
+  fxLayoutAlign="center"
+  data-wow-delay="0.3s"
+  data-wow-duration="2s"
+>
+  <mat-card
+    *ngFor="let album of newRealeasesSongs"
+    class="card-release"
+    fxFlex="20"
+    fxFlex.sm="40"
+    fxFlex.xs="40"
+  >
+    <img class="img-pointer" mat-card-image [src]="album.images | noimage" />
+    <mat-card-content class="text-white">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <span class="title">{{ album.name }}</span>
+        <hr />
+        <mat-chip-list
+          *ngFor="let artist of album.artists"
+          aria-label="Fish selection"
+        >
+          <mat-chip (click)="showArtist(artist.id)">{{ artist.name }}</mat-chip>
+        </mat-chip-list>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

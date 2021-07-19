@@ -1,0 +1,31 @@
+.card-release {
+  color: white;
+  background: transparent;
+  margin: 25px 20px 20px 10px;
+  -webkit-box-shadow: 4px 4px 15px -1px #1dd05d;
+  box-shadow: 4px 4px 15px -1px #1dd05d;
+}
+
+.card-release:hover {
+  box-shadow: rgba(224, 224, 224, 0.479) 0px 19px 43px;
+  transform: translate3d(0px, -15px, 0px);
+  -webkit-transform: translate3d(0px, -15px, 0px);
+  -moz-transform: translate3d(0px, -15px, 0px);
+  -ms-transform: translate3d(0px, -15px, 0px);
+  -o-transform: translate3d(0px, -15px, 0px);
+  transition: all 0.5s ease-in-out;
+}
+
+span {
+  text-align: center;
+}
+
+.title {
+  font-size: 21px;
+}
+
+.mat-chip.mat-standard-chip {
+  background-color: #1dd05d;
+  margin-bottom: 7px;
+  cursor: pointer;
+}

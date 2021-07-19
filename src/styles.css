@@ -11,6 +11,20 @@ body {
   color: white;
 }
 
-.row-height {
-  height: 100%;
+.swal2-loader {
+  border-color: #1dd05d transparent #1dd05d transparent !important;
+}
+
+.swal2-icon.swal2-info {
+  border-color: #1dd05d !important;
+  color: white !important;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: #1ec45a !important;
+  color: #000 !important;
+}
+
+.swal2-styled.swal2-confirm:focus {
+  box-shadow: none !important;
 }

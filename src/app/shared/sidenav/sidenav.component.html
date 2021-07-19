@@ -1,0 +1,46 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenav
+    class="sidenav-container"
+    mode="over"
+    [(opened)]="opened"
+    (opened)="showlogo = true"
+    (closed)="showlogo = false"
+  >
+    <div>
+      <i class="fab fa-spotify fa-2x icon-spotify"> </i
+      ><span class="title"> My Spotify</span>
+    </div>
+    <hr />
+    <nav>
+      <a routerLink="home" (click)="clickHandler()" routerLinkActive="active"
+        >Home</a
+      >
+      <a routerLink="search" (click)="clickHandler()" routerLinkActive="active"
+        >Search Artist</a
+      >
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <header>
+        <mat-icon *ngIf="!showlogo" (click)="sidenav.toggle()">menu</mat-icon>
+
+        <div *ngIf="!showlogo">
+          <i class="fab fa-spotify icon-spotify"> </i
+          ><span class="title"> My Spotify</span>
+        </div>
+
+        <nav *ngIf="!showlogo">
+          <a routerLink="home" routerLinkActive="active">Home</a>
+          <a routerLink="search" routerLinkActive="active">Search Artist</a>
+        </nav>
+      </header>
+    </mat-toolbar>
+    <div>
+      <router-outlet (activate)="onActivateScrollTop($event)"></router-outlet>
+    </div>
+    <!-- <app-footer></app-footer> -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

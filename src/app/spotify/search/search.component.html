@@ -1,0 +1,31 @@
+<div
+  class="wow fadeInDown"
+  data-wow-delay="0.3s"
+  data-wow-duration="2s"
+  fxLayout="row"
+  fxLayoutAlign="center"
+>
+  <mat-form-field>
+    <mat-label>Search Artist</mat-label>
+    <input #term matInput type="text" (keyup)="search(term.value)" />
+  </mat-form-field>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="center">
+  <mat-card
+    (click)="showArtist(artist.id)"
+    *ngFor="let artist of artists"
+    class="card-release wow fadeInUp"
+    data-wow-delay="0.3s"
+    data-wow-duration="2s"
+    fxFlex="20"
+    fxFlex.sm="40"
+    fxFlex.xs="40"
+  >
+    <img class="img-pointer" mat-card-image [src]="artist.images | noimage" />
+    <mat-card-content class="text-white">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <span class="title">{{ artist.name }}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
