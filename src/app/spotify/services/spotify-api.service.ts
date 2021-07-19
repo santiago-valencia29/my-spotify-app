@@ -61,6 +61,13 @@ export class SpotifyApiService {
     return this.getQuery(`artists/${id}`).pipe(delay(600));
   }
 
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/top-tracks?market=CO`).pipe(
+      delay(1000),
+      map((data) => data['tracks'])
+    );
+  }
+
   loadDataReleases(data?: any) {
     if (data == null) {
       return this.loadReleases.getValue();

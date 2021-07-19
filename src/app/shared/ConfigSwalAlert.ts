@@ -19,6 +19,20 @@ export const SwalConfig = {
     background: variables.backgroundStyle,
     html: '<p style="color:#ffff">Loading...</p>',
   },
+  loadingDesignArtist: {
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    icon: 'info',
+    background: variables.backgroundStyle,
+    html: '<p style="color:#ffff">Loading Artist...</p>',
+  },
+  loadingDesignTracks: {
+    showConfirmButton: false,
+    allowOutsideClick: false,
+    icon: 'info',
+    background: variables.backgroundStyle,
+    html: '<p style="color:#ffff">Loading Tracks...</p>',
+  },
   notFound: {
     showConfirmButton: true,
     icon: 'info',

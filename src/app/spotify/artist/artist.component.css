@@ -3,7 +3,11 @@
   color: white;
 }
 
-img {
+.artist-info {
+  padding-top: 20px;
+}
+
+.img {
   width: 100%;
   border-radius: 50% !important;
   -webkit-border-radius: 50% !important;
@@ -23,4 +27,87 @@ img {
 
 .btn-back {
   padding-top: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.img-track {
+  width: 50px;
+  height: 50px;
+}
+
+::ng-deep .mat-paginator {
+  background: transparent;
+  color: white;
+}
+
+::ng-deep .mat-paginator-icon {
+  color: white;
+}
+
+::ng-deep .mat-select-arrow {
+  color: white;
+}
+
+::ng-deep .mat-select-value {
+  color: white;
+}
+
+.table-style {
+  width: 100%;
+  background-color: transparent;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #1ec45a !important;
+}
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple {
+  background-color: white;
+}
+
+::ng-deep .mat-select-arrow {
+  color: #1ec45a;
+}
+
+.mat-column-album {
+  padding-left: 8px !important;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #1ec45a;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: black;
+}
+
+.mat-cell {
+  color: white;
+}
+
+th.mat-header-cell {
+  color: #1ec45a;
+}
+
+.container-table {
+  overflow: auto;
+}
+
+.my-row {
+  background-color: black;
+}
+
+.my-row__alternate {
+  background-color: #262a2e;
+}
+
+.my-row:focus {
+  background-color: #137a39;
+  outline: none;
 }

@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { ArtistComponent } from './artist/artist.component';
 import { RouterModule } from '@angular/router';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
 
 @NgModule({
   imports: [
@@ -16,6 +17,12 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ],
   exports: [HomeComponent, SearchComponent, ArtistComponent],
-  declarations: [HomeComponent, SearchComponent, ArtistComponent, NoimagePipe],
+  declarations: [
+    HomeComponent,
+    SearchComponent,
+    ArtistComponent,
+    NoimagePipe,
+    DomseguroPipe,
+  ],
 })
 export class SpotifyModule {}
