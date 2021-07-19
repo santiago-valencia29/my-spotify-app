@@ -12,6 +12,7 @@ mat-label {
 
 ::ng-deep .mat-input-element {
   caret-color: white;
+  color: white !important;
 }
 ::ng-deep .mat-input-element::placeholder {
   color: rgb(201, 195, 195);

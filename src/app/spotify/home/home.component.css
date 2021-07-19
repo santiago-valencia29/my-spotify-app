@@ -23,3 +23,9 @@ span {
 .title {
   font-size: 21px;
 }
+
+.mat-chip.mat-standard-chip {
+  background-color: #1dd05d;
+  margin-bottom: 7px;
+  cursor: pointer;
+}

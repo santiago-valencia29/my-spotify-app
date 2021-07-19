@@ -28,13 +28,3 @@ body {
 .swal2-styled.swal2-confirm:focus {
   box-shadow: none !important;
 }
-
-::ng-deep .mat-drawer-container {
-  background-color: transparent !important;
-}
-
-.mat-chip.mat-standard-chip {
-  background-color: #1dd05d;
-  margin-bottom: 7px;
-  cursor: pointer;
-}
