@@ -1,4 +1,4 @@
-My Spotify App: ANGULAR 10 TECHNICAL TEST
+My Spotify App: ANGULAR 10
 
 built with 🛠️:
 
